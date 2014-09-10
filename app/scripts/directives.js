@@ -1,23 +1,19 @@
 /*jshint unused: vars */
 define([
     'angular',
-    'routeManager',
-    'controllers',
-    'directives',
+    'directives/analytics',
     'angular-ui-router'
 ],
     /*deps*/
-    function (angular, RouteManager)/*invoke*/ {
+    function (angular, AnalyticsDirective)/*invoke*/ {
         'use strict';
 
-        return angular.module('YoApp', [
-                'controllers',
-                'directives',
+        return angular.module('directives', [
                 /*angJSDeps*/
                 'ngCookies',
                 'ngResource',
                 'ngSanitize',
                 'ui.router'
             ])
-            .config(RouteManager);
+            .directive("AnalyticsDirective", AnalyticsDirective);
     });
