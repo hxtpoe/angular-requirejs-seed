@@ -1,18 +1,17 @@
-/*jshint unused: vars */
 define([
     'angular',
-    'routeManager',
-    'controllers',
-    'directives',
+    'scripts/routeManager',
+    'scripts/common/commonModule',
+    'scripts/homepage/homepageModule',
     'angular-ui-router'
 ],
     /*deps*/
-    function (angular, RouteManager)/*invoke*/ {
+    function (angular, RouteManager, CommonModule, HomepageModule)/*invoke*/ {
         'use strict';
 
         return angular.module('YoApp', [
-                'controllers',
-                'directives',
+                CommonModule(),
+                HomepageModule(),
                 /*angJSDeps*/
                 'ngCookies',
                 'ngResource',

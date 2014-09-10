@@ -1,15 +1,16 @@
 /*jshint unused: vars */
 require.config({
+    baseUrl: './',
     paths: {
-        angular: '../bower_components/angular/angular',
-        sassbootstrap: '../bower_components/sass-bootstrap/dist/js/bootstrap',
-        'sass-bootstrap': '../bower_components/sass-bootstrap/dist/js/bootstrap',
-        'angular-scenario': '../bower_components/angular-scenario/angular-scenario',
-        'angular-sanitize': '../bower_components/angular-sanitize/angular-sanitize',
-        'angular-resource': '../bower_components/angular-resource/angular-resource',
-        'angular-mocks': '../bower_components/angular-mocks/angular-mocks',
-        'angular-cookies': '../bower_components/angular-cookies/angular-cookies',
-        'angular-ui-router': '../bower_components/angular-ui-router/release/angular-ui-router'
+        'angular': 'bower_components/angular/angular',
+        'sassbootstrap': 'bower_components/sass-bootstrap/dist/js/bootstrap',
+        'sass-bootstrap': 'bower_components/sass-bootstrap/dist/js/bootstrap',
+        'angular-scenario': 'bower_components/angular-scenario/angular-scenario',
+        'angular-sanitize': 'bower_components/angular-sanitize/angular-sanitize',
+        'angular-resource': 'bower_components/angular-resource/angular-resource',
+        'angular-mocks': 'bower_components/angular-mocks/angular-mocks',
+        'angular-cookies': 'bower_components/angular-cookies/angular-cookies',
+        'angular-ui-router': 'bower_components/angular-ui-router/release/angular-ui-router'
     },
     shim: {
         angular: {
@@ -39,6 +40,9 @@ require.config({
     },
     priority: [
         'angular'
+    ],
+    packages: [
+
     ]
 });
 
@@ -47,7 +51,7 @@ window.name = 'NG_DEFER_BOOTSTRAP!';
 
 require([
     'angular',
-    'app',
+    'scripts/app',
     'angular-cookies',
     'angular-sanitize',
     'angular-resource',
