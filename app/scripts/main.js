@@ -10,12 +10,16 @@ require.config({
         'angular-resource': 'bower_components/angular-resource/angular-resource',
         'angular-mocks': 'bower_components/angular-mocks/angular-mocks',
         'angular-cookies': 'bower_components/angular-cookies/angular-cookies',
-        'angular-ui-router': 'bower_components/angular-ui-router/release/angular-ui-router'
+        'angular-ui-router': 'bower_components/angular-ui-router/release/angular-ui-router',
+        'angular-animate': 'bower_components/angular-animate/angular-animate',
+        'angular-strap': 'bower_components/angular-strap/dist/angular-strap.min',
+        'angular-strap-tpl': 'bower_components/angular-strap/dist/angular-strap.tpl.min'
     },
     shim: {
-        angular: {
+        'angular': {
             exports: 'angular'
         },
+
         'angular-ui-router': {
             deps: [
                 'angular'
@@ -31,6 +35,18 @@ require.config({
         'angular-resource': [
             'angular'
         ],
+        'angular-animate': {
+            exports: 'angular'
+        },
+        'angular-strap': [
+            'angular',
+            'angular-animate'
+        ],
+        'angular-strap-tpl': [
+            'angular',
+            'angular-animate',
+            'angular-strap'
+        ],
         'angular-mocks': {
             deps: [
                 'angular'
@@ -39,7 +55,8 @@ require.config({
         }
     },
     priority: [
-        'angular'
+        'angular',
+        'angular-animate'
     ],
     packages: [
 
@@ -51,11 +68,7 @@ window.name = 'NG_DEFER_BOOTSTRAP!';
 
 require([
     'angular',
-    'scripts/app',
-    'angular-cookies',
-    'angular-sanitize',
-    'angular-resource',
-    'angular-ui-router'
+    'scripts/app'
 ], function (angular, app) {
     'use strict';
     /* jshint ignore:start */

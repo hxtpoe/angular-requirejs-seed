@@ -10,7 +10,7 @@ define([], function () {
                         controller: 'HomepageController as HomepageCtrl'
                     }
                 }
-            })
+            });
     };
 
     return ['$stateProvider', RouteManager];

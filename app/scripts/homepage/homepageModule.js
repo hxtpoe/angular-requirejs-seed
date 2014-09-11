@@ -2,7 +2,8 @@ define([
     'angular',
     'scripts/homepage/routeManager',
     'scripts/homepage/homepage-ctrl',
-    'angular-ui-router'
+    'angular-ui-router',
+    'angular-animate'
 ],
     /*deps*/
     function (angular, RouteManager, HomepageController)/*invoke*/ {
@@ -13,7 +14,8 @@ define([
 
             angular.module(name, [
                     /*angJSDeps*/
-                    'ui.router'
+                    'ui.router',
+                    'ngAnimate'
                 ])
                 .controller("HomepageController", HomepageController)
                 .config(RouteManager);
