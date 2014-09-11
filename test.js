@@ -18,7 +18,10 @@ requirejs.config({
         'angular-resource': './bower_components/angular-resource/angular-resource',
         'angular-mocks': './bower_components/angular-mocks/angular-mocks',
         'angular-cookies': './bower_components/angular-cookies/angular-cookies',
-        'angular-ui-router': './bower_components/angular-ui-router/release/angular-ui-router'
+        'angular-ui-router': './bower_components/angular-ui-router/release/angular-ui-router',
+        'angular-animate': './bower_components/angular-animate/angular-animate',
+        'angular-strap': './bower_components/angular-strap/dist/angular-strap.min',
+        'angular-strap-tpl': './bower_components/angular-strap/dist/angular-strap.tpl.min'
     },
 
     shim: {
@@ -27,9 +30,23 @@ requirejs.config({
         'angular-sanitize': ['angular'],
         'angular-resource': ['angular'],
         'angular-ui-router': ['angular'],
+        'angular-animate': {
+            exports: 'angular'
+        },
+        'angular-strap': [
+            'angular',
+            'angular-animate'
+        ],
+        'angular-strap-tpl': [
+            'angular',
+            'angular-animate',
+            'angular-strap'
+        ],
         'angular-mocks': {
-            deps: ['angular'],
-            'exports': 'angular.mock'
+            deps: [
+                'angular'
+            ],
+            exports: 'angular.mock'
         }
     },
 
