@@ -147,10 +147,10 @@
             },
 
             // Automatically inject Bower components into the app
-            'bower-install': {
-                app: {
+            'bower': {
+                install: {
                     html: '<%= yeoman.app %>/index.html',
-                    ignorePath: '<%= yeoman.app %>/'
+                    targetDir: 'app/bower_components'
                 }
             },
 
@@ -367,16 +367,6 @@
                 }
             },
 
-            // Settings for grunt-bower-requirejs
-            bower: {
-                app: {
-                    rjsConfig: '<%= yeoman.app %>/scripts/main.js',
-                    options: {
-                        exclude: ['requirejs', 'json3', 'es5-shim']
-                    }
-                }
-            },
-
             replace: {
                 test: {
                     src: '<%= yeoman.app %>/../test/test-main.js',
@@ -396,25 +386,18 @@
             requirejs: {
                 dist: {
                     options: {
-                        dir: '<%= yeoman.dist %>/scripts/',
-                        modules: [
-                            {
-                                name: 'main'
-                            }
-                        ],
-                        preserveLicenseComments: false, // remove all comments
-                        removeCombined: true,
                         baseUrl: '<%= yeoman.app %>/scripts',
-                        mainConfigFile: '<%= yeoman.app %>/scripts/main.js',
-                        optimize: 'uglify2',
-                        uglify2: {
-                            mangle: false
-                        }
+                        dir: '<%= yeoman.dist %>/scripts',
+                        optimize: 'uglify',
+                        preserveLicenseComments: false,
+                        removeCombined: true,
+                        useStrict: true,
+                        wrap: false,
+                        fileExclusionRegExp: /^tests$/
                     }
                 }
             }
         });
-
 
         grunt.registerTask('serve', function (target) {
             if (target === 'dist') {
@@ -445,9 +428,8 @@
         ]);
 
         grunt.registerTask('build', [
+            'bower:install',
             'clean:dist',
-            'bower-install',
-            'bower:app',
             'replace:test',
             'useminPrepare',
             'concurrent:dist',
@@ -457,8 +439,8 @@
             'copy:dist',
             'cdnify',
             'cssmin',
-            // Below task commented out as r.js (via grunt-contrib-requirejs) will take care of this
-            // 'uglify',
+////            Below task commented out as r.js (via grunt-contrib-requirejs) will take care of this
+////            'uglify',
             'rev',
             'usemin',
             'requirejs:dist',
