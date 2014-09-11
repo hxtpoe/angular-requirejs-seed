@@ -406,7 +406,7 @@
 
             grunt.task.run([
                 'clean:server',
-                'bower-install',
+                'bower:install',
                 'concurrent:server',
                 'autoprefixer',
                 'connect:livereload',

@@ -1,4 +1,3 @@
-/*jshint unused: vars */
 define([
     'angular',
     'scripts/common/analytics/analytics'
@@ -10,10 +9,8 @@ define([
         return function () {
             var name = 'commonModule';
 
-            angular.module(name, [
-                ])
+            angular.module(name, [])
                 .directive('AnalyticsDirective', AnalyticsDirective);
-
             return name;
         };
     });

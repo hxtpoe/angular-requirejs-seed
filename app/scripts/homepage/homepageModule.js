@@ -13,7 +13,8 @@ define([
 
             angular.module(name, [
                     /*angJSDeps*/
-                    'ui.router'
+                    'ui.router',
+                    'mgcrea.ngStrap.modal'
                 ])
                 .controller("HomepageController", HomepageController)
                 .config(RouteManager);
