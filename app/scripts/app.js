@@ -9,8 +9,7 @@ define([
     'angular-strap-tpl',
     'angular-cookies',
     'angular-sanitize',
-    'angular-resource',
-    'angular'
+    'angular-resource'
 ],
     /*deps*/
     function (angular, RouteManager, CommonModule, HomepageModule)/*invoke*/ {
@@ -25,16 +24,15 @@ define([
                 'ngResource',
                 'ngSanitize',
                 'ui.router',
-                'ngAnimate',
                 'mgcrea.ngStrap.modal'
 
             ])
             .config(RouteManager)
-            .config(function ($modalProvider) {
+            .config(["$modalProvider", function ($modalProvider) {
                 angular.extend($modalProvider.defaults, {
                     html: true
                 });
-            });
+            }]);
     }
 )
 ;
