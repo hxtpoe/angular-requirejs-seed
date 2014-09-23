@@ -2,18 +2,16 @@ define([
     'angular',
     'scripts/homepage/routeManager',
     'scripts/homepage/homepage-ctrl',
-    'angular-ui-router',
-    'angular-animate'
+    'angular-animate',
+    'angular-ui-router'
 ],
-    /*deps*/
-    function (angular, RouteManager, HomepageController)/*invoke*/ {
+    function (angular, RouteManager, HomepageController) {
         'use strict';
 
         return function () {
             var name = 'homepageModule';
 
             angular.module(name, [
-                    /*angJSDeps*/
                     'ui.router',
                     'ngAnimate'
                 ])

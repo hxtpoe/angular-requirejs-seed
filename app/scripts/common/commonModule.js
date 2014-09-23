@@ -1,11 +1,10 @@
 define([
     'angular',
     'scripts/common/analytics/analytics',
-    'angular-ui-router',
-    'angular-animate'
+    'angular-animate',
+    'angular-ui-router'
 ],
-    /*deps*/
-    function (angular, AnalyticsDirective)/*invoke*/ {
+    function (angular, AnalyticsDirective) {
         'use strict';
 
         return function () {
