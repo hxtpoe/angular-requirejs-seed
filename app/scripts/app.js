@@ -11,21 +11,18 @@ define([
     'angular-sanitize',
     'angular-resource'
 ],
-    /*deps*/
-    function (angular, RouteManager, CommonModule, HomepageModule)/*invoke*/ {
+    function (angular, RouteManager, CommonModule, HomepageModule) {
         'use strict';
 
         return angular.module('YoApp', [
-                CommonModule(),
-                HomepageModule(),
-                /*angJSDeps*/
                 'ngAnimate',
                 'ngCookies',
                 'ngResource',
                 'ngSanitize',
                 'ui.router',
-                'mgcrea.ngStrap.modal'
-
+                'mgcrea.ngStrap.modal',
+                CommonModule(),
+                HomepageModule()
             ])
             .config(RouteManager)
             .config(["$modalProvider", function ($modalProvider) {
