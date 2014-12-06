@@ -9,12 +9,12 @@ http://blog.inzynieria.it/getting-start-with-angular-require-grunt-bower-karma-s
 
 # Installation
 
-git clone https://github.com/hxtpoe/angular-requirejs-seed.git
+1. git clone https://github.com/hxtpoe/angular-requirejs-seed.git
+2. cd angular-requirejs-seed
+3. npm install
+4. bower install
+5. grunt serve
 
-cd angular-requirejs-seed
+# Build
 
-npm install
-
-bower install
-
-grunt serve
+1. grunt dist
