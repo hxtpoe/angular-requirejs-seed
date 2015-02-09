@@ -20,6 +20,9 @@ require.config({
             exports: 'angular'
         },
         'angular-animate': {
+            deps: [
+                'angular'
+            ],
             exports: 'angular'
         },
         'angular-ui-router': {
